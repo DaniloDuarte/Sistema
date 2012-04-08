@@ -1,10 +1,12 @@
+package Logica;
 import java.awt.List;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Pessoa {
+public class criarUsuario {
 	
 	private String login;
+	private String senha;
 	private String nome;
 	private String email;
 	private String endereco;
@@ -12,15 +14,16 @@ public class Pessoa {
 	private ArrayList<Carona> caronas;
 	private GerenciaDados gd;
 
-	public Pessoa(String login, String nome, String email, String endereco, String telefone) throws Exception {
+	public criarUsuario(String login, String senha, String nome, String email, String endereco, String telefone) throws Exception {
 		gd = new GerenciaDados();
 		gd.cadastraConta(this);
 		
 		setLogin(login);
-		this.nome = nome;
-		this.email = email;
-		this.endereco = endereco;
-		this.telefone = telefone;
+		setSenha(senha);
+		setNome(nome);
+		setEmail(email);
+		setEndereco(endereco);
+		setTelefone(telefone);
 		this.caronas = new ArrayList<Carona>();
 	}
 
@@ -40,12 +43,26 @@ public class Pessoa {
 		}
 		this.login = login;
 	}
-
+	
+	public String getSenha() {
+		return senha;
+	}
+	
+	public void setSenha(String senha) throws Exception {
+		if (senha == null || senha.equals("")){
+			throw new Exception("senha invalido!");
+		}
+		this.senha = senha;
+	}
+	
 	public String getNome() {
 		return nome;
 	}
 
-	public void setNome(String nome) {
+	public void setNome(String nome) throws Exception {
+		if (nome == null || nome.equals("")){
+			throw new Exception("Nome invalido!");
+		}
 		this.nome = nome;
 	}
 
@@ -53,7 +70,10 @@ public class Pessoa {
 		return email;
 	}
 
-	public void setEmail(String email) {
+	public void setEmail(String email) throws Exception {
+		if (email == null || email.equals("")){
+			throw new Exception("Email invalido!");
+		}
 		this.email = email;
 	}
 
@@ -61,7 +81,10 @@ public class Pessoa {
 		return endereco;
 	}
 
-	public void setEndereco(String endereco) {
+	public void setEndereco(String endereco) throws Exception {
+		if (endereco == null || endereco.equals("")){
+			throw new Exception("Endereço invalido!");
+		}
 		this.endereco = endereco;
 	}
 
@@ -69,12 +92,17 @@ public class Pessoa {
 		return telefone;
 	}
 
-	public void setTelefone(String telefone) {
+	public void setTelefone(String telefone) throws Exception {
+		if (telefone == null || telefone.equals("")){
+			throw new Exception("Telefone invalido!");
+		}
 		this.telefone = telefone;
 	}
 
 	public ArrayList<Carona> getCaronas() {
 		return caronas;
 	}
+
+
 	
 }

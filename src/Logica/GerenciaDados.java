@@ -1,3 +1,4 @@
+package Logica;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -6,7 +7,7 @@ import java.io.IOException;
 
 public class GerenciaDados {
 	
-	public void cadastraConta(Pessoa pessoa){
+	public void cadastraConta(criarUsuario pessoa){
 		// Gravando no arquivo  
         File arquivo;  
  
@@ -28,7 +29,7 @@ public class GerenciaDados {
 		}   
 	}
 
-	public void cadastraCarona(Pessoa pessoa) {
+	public void cadastraCarona(criarUsuario pessoa) {
 		//SE PESSOA JA TIVER CARONA CADASTRADA
 		
 		
@@ -36,6 +37,8 @@ public class GerenciaDados {
 		
 		
 	}
+	
+	
 	
 	
 }

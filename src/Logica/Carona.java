@@ -1,3 +1,4 @@
+package Logica;
 import java.sql.Time;
 import java.util.Date;
 
@@ -55,5 +56,10 @@ public class Carona {
 
 	public void setVagasDisponiveis(int vagasDisponiveis) {
 		this.vagasDisponiveis = vagasDisponiveis;
+	}
+	
+	public void localizaCarona(String origem, String destino){
+		//TODO pesquisar no arquivo todas as caronas e depois mostrar as certas 
+		//TODO com todos os dados de forma organizada
 	}
 }
